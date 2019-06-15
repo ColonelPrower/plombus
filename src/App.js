@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-//import './App.css';
-import './bulma/css/bulma.min.css';
+import Menu from './Components/Menu';
+import SideMenu from './Components/Menu/SideMenu';
+import Home from './Components/Home';
 
+//import './App.css';
+import './lib/bulma/css/bulma.min.css';
+import './lib/plombus.css';
 class App extends Component {
   render() {
     return (
-      <div className="columns">
-        <div className="column">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <div className="column">
-            <p className="App-intro">
-              To get started, edit <code>src/App.js</code> and save to reload.
-            </p>        
-        </div>
-        
+      <React.Fragment>
+      <div className="container is-fluid">
+        <Menu/>
       </div>
+      <br/>
+        <div className="container is-fluid columns">
+          <div className="column is-2 ">
+            <SideMenu/>
+          </div>
+          <div className="column">
+              <Home/>
+          </div>
+
+        </div>
+        </React.Fragment>
+      //</div>
     );
   }
 }
